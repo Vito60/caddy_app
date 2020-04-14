@@ -5,12 +5,12 @@ class ClubsController < ApplicationController
   def index
     @clubs = Club.all
 
-    render json: @clubs
+    render json: @clubs, include: :pros
   end
 
   # GET /clubs/1
   def show
-    render json: @club
+    render json: @club, include: :pros
   end
 
   # POST /clubs

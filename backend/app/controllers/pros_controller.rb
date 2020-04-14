@@ -5,12 +5,12 @@ class ProsController < ApplicationController
   def index
     @pros = Pro.all
 
-    render json: @pros
+    render json: @pros, include: :clubs
   end
 
   # GET /pros/1
   def show
-    render json: @pro
+    render json: @pro, include: :clubs
   end
 
   # POST /pros

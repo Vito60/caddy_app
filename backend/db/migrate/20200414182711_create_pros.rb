@@ -4,7 +4,7 @@ class CreatePros < ActiveRecord::Migration[6.0]
       t.string :first_name
       t.string :last_name
       t.string :hometown
-      t.string :home_city
+      t.string :home_state
       t.string :age
 
       t.timestamps
