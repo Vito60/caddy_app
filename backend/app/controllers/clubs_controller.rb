@@ -16,8 +16,10 @@ class ClubsController < ApplicationController
   # POST /clubs
   def create
     @club = Club.new(club_params)
-
+    @pro = Pro.find(params["pro_id"])
     if @club.save
+      pro_club_ids = @pro.clubs.ids.push(@club.id)
+      @pro.update(club_ids: pro_club_ids)
       render json: @club, status: :created, location: @club
     else
       render json: @club.errors, status: :unprocessable_entity
@@ -46,6 +48,6 @@ class ClubsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def club_params
-      params.require(:club).permit(:club_type, :brand, :model, :loft)
+      params.require(:club).permit(:club_type, :brand, :model, :loft, :pro_id)
     end
 end

@@ -1,0 +1,38 @@
+nav {
+    margin: 0 0 0 0;
+    font-family: Arial;
+    font-size: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: burlywood;
+ }
+
+ nav ul{
+    list-style: none;
+ }
+
+ nav ul li {
+    float: left;
+    width: 20%;
+ }
+
+#nav-title {
+  text-align: center;
+}
+
+#pro-club-list {
+    text-align: center;
+    background-position: center;
+}
+
+#pro-club-list ul li {
+    text-align: center;
+    list-style: none;
+}
+
+#pro-club-list-form ul li {
+    text-align: center;
+}
+
+
+

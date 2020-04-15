@@ -16,7 +16,6 @@ class ProsController < ApplicationController
   # POST /pros
   def create
     @pro = Pro.new(pro_params)
-
     if @pro.save
       render json: @pro, status: :created, location: @pro
     else
@@ -46,6 +45,6 @@ class ProsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def pro_params
-      params.require(:pro).permit(:first_name, :last_name, :hometown, :home_city, :age)
+      params.require(:pro).permit(:first_name, :last_name, :hometown, :home_city, :home_state, :age)
     end
 end
