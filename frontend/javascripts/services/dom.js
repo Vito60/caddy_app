@@ -43,15 +43,15 @@ class DOM {
         }
 
         if(response.brand != undefined){
-            newClubErrorField().innerHTML += `<li> Brand: ${response.brand}</li>`
+            newClubErrorField().innerHTML += `<li> Club Brand: ${response.brand}</li>`
         }
         
         if(response.model != undefined){
-            newClubErrorField().innerHTML += `<li> Model: ${response.model}</li>`
+            newClubErrorField().innerHTML += `<li> Club Model: ${response.model}</li>`
         }
 
         if(response.loft != undefined){
-            newClubErrorField().innerHTML += `<li> Loft: ${response.loft}</li>`
+            newClubErrorField().innerHTML += `<li> Club Loft: ${response.loft}</li>`
         }
         
     }
@@ -129,6 +129,7 @@ class DOM {
         <input type="submit" value="submit" id="login" onClick="Club.newClubFromForm(); return false;">
         </div>
     </form>
+        <br>
         <ul id="new-club-errors">
         </ul>
         `
