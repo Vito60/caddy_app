@@ -9,39 +9,8 @@ class Club {
     }
 
     static renderClubForm(id) {
-        mainContainer().innerHTML = `
-        <h3>Add a new club</h3>
-        <form id="new-club-form">
-        <input type="hidden" name="pro_id" id="pro_id" value=${id}>
-        <div>
-            <label for="club_type">Club Type:</label>
-            <input type="text" name="club_type" id="club_type">
-        </div>
-        <br>
-        <div>
-            <label for="brand">Club Brand:</label>
-            <input type="text" name="brand" id="brand">
-        </div>
-        <br>
-        <div>
-            <label for="model">Club Model:</label>
-            <input type="text" name="model" id="model">
-        </div>
-        <br>
-        <div>
-            <label for="loft">Club Loft:</label>
-            <input type="text" name="loft" id="loft">
-        </div>
-        <br>
-        <div>
-        <input type="submit" value="submit" id="login" onClick="Club.newClubFromForm(); return false;">
-        </div>
-    </form>
-        `
-        getViewPros().addEventListener('click', function(event) {
-            event.preventDefault()
-            Pro.renderPros()
-        } )
+        mainContainer().innerHTML = DOM.renderNewClubForm(id)
+
     }
 
     static newClubFromForm() {
@@ -60,8 +29,27 @@ class Club {
         }
 
         API.post('/clubs', strongParams)
-        this.renderClubForm(proId)
+        .then(function (response) {
+            if (response.id === undefined) {
+                
+                DOM.errorHandlingNewClubForm(response)
+              }
+            else {
+                Club.renderClubForm(newClubForm().pro_id.value)
+
+            }
+          })
           
     }
+
+      static renderClubs(pro) {
+        pro.clubs.forEach(club => {
+            const ul = document.getElementById(`${pro.combineFirstLastNameForId()}`)  
+            ul.innerHTML += DOM.renderClubsHTML(club)
+         })
+         
+      }
+
+  
 
 }

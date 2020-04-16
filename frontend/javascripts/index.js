@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const newProForm = () => document.getElementById('new-pro-form')
   const addClubButton = (id) => document.getElementById(id)
   const newClubForm = () => document.getElementById('new-club-form')
+  const newProErrorField = () => document.getElementById("new-pro-errors")
+  const newClubErrorField = () => document.getElementById("new-club-errors")
+
 
   getViewPros().addEventListener('click', function(event) {
     event.preventDefault()
