@@ -1,0 +1,1 @@
+This application uses a Javascript, HTML, and css frontend and a Rails API backend to display golfers and what clubs they are using. A user of this app can submit a new pro and add golf clubs to existing pros. 
