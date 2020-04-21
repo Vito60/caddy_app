@@ -13,13 +13,5 @@ document.addEventListener('DOMContentLoaded', function () {
   const newClubErrorField = () => document.getElementById("new-club-errors")
 
 
-  getViewPros().addEventListener('click', function(event) {
-    event.preventDefault()
-    Pro.renderPros()
-} )
 
-getAddPro().addEventListener('click', function(event) {
-    event.preventDefault()
-    Pro.renderAddProForm()
-} )
 
