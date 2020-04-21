@@ -9,6 +9,7 @@ class API {
           }
           return response.json()
         })
+        .catch(error => console.log(error) )
     }
   
     static post(url, data) {
@@ -22,7 +23,7 @@ class API {
         
       })
         .then(resp => resp.json())
-        
+        .catch(error => console.log(error) )
        
     }
   
